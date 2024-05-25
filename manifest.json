@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Request Modifier",
+  "version": "1.0",
+  "description": "Modify or delete parameters in request body JSON or form data.",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
